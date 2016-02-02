@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridView
+             android:id="@+id/gridview_popular_item"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:padding="10dp"
+             android:numColumns="2"
+             android:verticalSpacing="10dp"
+             android:background="@color/lightGray"
+             android:horizontalSpacing="10dp"
+             android:stretchMode="columnWidth"
+             android:gravity="center"
+             />
+
+</LinearLayout>
