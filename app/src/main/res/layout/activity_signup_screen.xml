@@ -7,6 +7,7 @@
     android:paddingTop="20dp"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
+    android:id="@+id/login_root"
     tools:context="com.shoping.luxerush.Login">
 
     <LinearLayout
@@ -26,6 +27,7 @@
             />
 
         <EditText
+            android:id="@+id/signup_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/golden"
@@ -42,6 +44,7 @@
             />
 
         <EditText
+            android:id="@+id/signup_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/golden"
@@ -58,6 +61,7 @@
             android:inputType="textEmailAddress"
             />
         <EditText
+            android:id="@+id/signup_mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/golden"
@@ -75,6 +79,7 @@
             android:maxLength="10"
             />
         <EditText
+            android:id="@+id/signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/golden"
@@ -94,6 +99,7 @@
 
 
         <Button
+            android:id="@+id/signup_done"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/golden_button_selector"
@@ -130,11 +136,13 @@
             android:gravity="center"
             >
             <ImageButton
+                android:id="@+id/signup_fb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_hiw_fb"
                 />
             <ImageButton
+                android:id="@+id/signup_google"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_id": "luxerush-1213",
+    "project_number": "351850919678",
+    "name": "LuxeRush"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351850919678:android:3590a581e5d07cbc",
+        "client_id": "android:com.shoping.luxerush",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.shoping.luxerush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "351850919678-4cudg3le5g82q7rtin5ll0koia4j104s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shoping.luxerush",
+            "certificate_hash": "3DF5757BB6D100DD289350BF7FCA084E77EF95BF"
+          }
+        },
+        {
+          "client_id": "351850919678-9q25rjvntssrnn7frk3uoumv1jk8rvv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

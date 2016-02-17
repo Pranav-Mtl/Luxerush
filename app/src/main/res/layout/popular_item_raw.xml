@@ -11,21 +11,22 @@
     card_view:cardCornerRadius="4dp">
 
     <RelativeLayout
+        android:id="@+id/itemlist_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         >
 
         <ImageView
-            android:id="@+id/popular_item_image"
+            android:id="@+id/itemlist_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:scaleType="centerCrop"
-            android:background="@drawable/ic_default_popular_item"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
             />
 
             <LinearLayout
-                android:layout_below="@id/popular_item_image"
+                android:layout_below="@id/itemlist_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -33,9 +34,10 @@
                 android:orientation="vertical"
                 >
                 <TextView
+                    android:id="@+id/itemlist_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Item Heading"
+                    android:text=""
                     android:textColor="@color/darkGray"
                     android:textStyle="bold"
                     android:textSize="@dimen/small_text_size"
@@ -43,30 +45,34 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rs. 50000"
                         android:padding="5dp"
-                        android:textSize="@dimen/small_text_size"
-                        android:textColor="@color/darkGray"
-                        />
-                        <ImageView
-                            android:layout_width="50dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/itemlist_original"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/ic_horizontal_line"
+                            android:text=""
+                            android:textColor="@color/darkGray"
+                            />
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="1dp"
+                            android:background="@color/darkGray"
                             android:layout_centerInParent="true"
                             />
                     </RelativeLayout>
+
                     <TextView
+                        android:id="@+id/itemlist_discount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rs. 300"
+                        android:text=""
                         android:padding="5dp"
                         android:textColor="@color/red"
                         android:textSize="@dimen/small_text_size"
@@ -76,10 +82,11 @@
             </LinearLayout>
 
         <ImageButton
+            android:id="@+id/itemlist_wishlist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:background="@drawable/ic_red_heart"
+
             />
 
 </RelativeLayout>

@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.shoping.BE.ItemDetailBE;
 import com.shoping.adapter.CartAdapter;
 
 public class CartScreen extends AppCompatActivity implements OnClickListener {
@@ -24,6 +26,9 @@ public class CartScreen extends AppCompatActivity implements OnClickListener {
     CartAdapter objCartAdapter;
 
     Button btnDone;
+
+    ItemDetailBE objItemDetailBE;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +57,8 @@ public class CartScreen extends AppCompatActivity implements OnClickListener {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         listCart.setLayoutManager(llm);
+
+        objItemDetailBE= (ItemDetailBE) getIntent().getSerializableExtra("ItemDetailBE");
 
 
 
@@ -88,7 +95,26 @@ public class CartScreen extends AppCompatActivity implements OnClickListener {
 
         switch (v.getId()){
             case R.id.cart_done:
-                startActivity(new Intent(getApplicationContext(),CheckOut.class));
+                String id="";
+                if(objCartAdapter.listId!=null){
+                   if(objCartAdapter.listId.size()>0){
+                       Log.d("Cart Size",objCartAdapter.listId.size()+"");
+                       for(int i=0;i<objCartAdapter.listId.size();i++){
+                           if(i==0){
+                               id=objCartAdapter.listId.get(i).toString();
+                           }
+                           else {
+                               id = id + "," + objCartAdapter.listId.get(i).toString();
+                           }
+
+                           Log.d("Cart Item Name",objCartAdapter.listId.get(i).toString());
+                       }
+                       objItemDetailBE.setProductID(id);
+                       startActivity(new Intent(getApplicationContext(), CheckOut.class).putExtra("ItemDetailBE", objItemDetailBE));
+                   }
+
+                }
+
                 break;
         }
     }

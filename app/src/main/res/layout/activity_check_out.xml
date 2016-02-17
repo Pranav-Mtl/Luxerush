@@ -14,7 +14,6 @@
         android:layout_alignParentTop="true"
         app:theme="@style/Toolbar_Theme"
         android:elevation="4dp"
-
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize">
 
@@ -50,51 +49,6 @@
         android:orientation="vertical"
         >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:background="@drawable/ic_coupen_bg"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Have a Coupon?"
-                android:textColor="@color/textColorWhite"
-                android:textStyle="bold"
-                android:textSize="@dimen/big_text_size"
-                />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                >
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/ic_coupon_textview"
-                    android:hint="Enter Code"
-                    android:padding="5dp"
-                    android:textColorHighlight="@color/white"
-                    android:textColor="@color/white"
-                    />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minHeight="@dimen/min_button_size"
-                    android:text="Apply"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/textColorBlack"
-                    android:padding="10dp"
-                    android:textSize="@dimen/small_text_size"
-                    />
-            </LinearLayout>
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -102,14 +56,23 @@
             android:padding="16dp"
             android:orientation="vertical"
             >
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Shipping Address"
+                android:textColor="@color/darkGray"
+                />
             <Spinner
+                android:id="@+id/checkout_states"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_spinner_bg"
+                android:layout_marginTop="10dp"
                 ></Spinner>
 
             <EditText
+                android:id="@+id/checkout_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -117,8 +80,11 @@
                 android:hint="Full Name"
                 android:textColor="@color/textColorBlack"
                 android:background="@drawable/white_bg_shape_flat"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 />
             <EditText
+                android:id="@+id/checkout_address1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -126,8 +92,11 @@
                 android:hint="Address Line1"
                 android:textColor="@color/textColorBlack"
                 android:background="@drawable/white_bg_shape_flat"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 />
             <EditText
+                android:id="@+id/checkout_address2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -135,9 +104,12 @@
                 android:hint="Address Line2"
                 android:textColor="@color/textColorBlack"
                 android:background="@drawable/white_bg_shape_flat"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 />
 
             <EditText
+                android:id="@+id/checkout_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -145,6 +117,8 @@
                 android:hint="Town/City"
                 android:textColor="@color/textColorBlack"
                 android:background="@drawable/white_bg_shape_flat"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -155,6 +129,7 @@
                 >
 
                 <EditText
+                    android:id="@+id/checkout_zip"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
@@ -163,9 +138,14 @@
                     android:hint="Zip"
                     android:textColor="@color/textColorBlack"
                     android:background="@drawable/white_bg_shape_flat"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="6"
                     />
 
                 <EditText
+                    android:id="@+id/checkout_mobile"
                     android:layout_width="0dp"
                     android:layout_weight="2.5"
                     android:layout_height="wrap_content"
@@ -175,9 +155,14 @@
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/textColorBlack"
                     android:background="@drawable/white_bg_shape_flat"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="10"
                     />
             </LinearLayout>
             <EditText
+                android:id="@+id/checkout_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -185,17 +170,23 @@
                 android:hint="Email "
                 android:textColor="@color/textColorBlack"
                 android:background="@drawable/white_bg_shape_flat"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+
                 />
 
             <Button
                 android:id="@+id/checkout_done"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:background="@drawable/black_button_selector"
                 android:layout_marginTop="10dp"
-                android:text="Next"
+                android:text="Proceed to Payment"
+                android:padding="5dp"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:minHeight="@dimen/button_size"
                 />

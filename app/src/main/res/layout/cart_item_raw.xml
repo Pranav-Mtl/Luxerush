@@ -27,11 +27,11 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/cart_image"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true"
-                    android:background="@drawable/ic_cart_default_image"
                     />
             </LinearLayout>
 
@@ -41,6 +41,7 @@
                 android:orientation="vertical"
                 >
                 <TextView
+                    android:id="@+id/cart_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nike leather jacket"
@@ -52,54 +53,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:orientation="vertical"
                     >
                 <TextView
+                    android:id="@+id/cart_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Size: 5"
-                    android:background="@color/lightGray"
+
                     android:padding="5dp"
                     android:textColor="@color/textColorDark"
                     android:textSize="@dimen/small_text_size"
                     />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="X"
-                        android:padding="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:textColor="@color/textColorDark"
-                        android:textSize="@dimen/small_text_size"
-                        />
+
+
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1"
-                        android:background="@color/lightGray"
-                        android:padding="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:textColor="@color/textColorDark"
-                        android:textSize="@dimen/small_text_size"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="="
-                        android:padding="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:textColor="@color/textColorDark"
-                        android:textSize="@dimen/small_text_size"
-                        />
-
-                    <TextView
+                        android:id="@+id/cart_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rs. 500"
-                        android:background="@color/lightGray"
                         android:padding="5dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
                         android:textColor="@color/textColorDark"
                         android:textSize="@dimen/small_text_size"
                         />
@@ -116,32 +91,11 @@
             android:weightSum="2"
             android:padding="5dp"
             >
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Move to Wishlist"
-                    android:textColor="@color/textColorDark"
-                    android:textSize="@dimen/small_text_size"
-                    android:drawablePadding="5dp"
-                    android:gravity="center"
-                    android:drawableRight="@drawable/ic_red_heart"
-                    />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                />
             <LinearLayout
+                android:id="@+id/cart_remove"
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:layout_height="wrap_content">
 

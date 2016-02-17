@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/login_root"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.shoping.luxerush.HowItWork">
 
@@ -67,38 +68,33 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/hit_iv_first"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/ic_hiw_color_dot"
                     />
                 <ImageView
+                    android:id="@+id/hit_iv_second"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/ic_hiw_white_dot"
                     />
                 <ImageView
+                    android:id="@+id/hit_iv_third"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/ic_hiw_white_dot"
                     />
                 <ImageView
+                    android:id="@+id/hit_iv_fourth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/ic_hiw_white_dot"
                     />
             </LinearLayout>
-            <TextView
-                android:id="@+id/hiw_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="hello"
-                android:textColor="@color/textColorWhite"
-                android:gravity="center"
-                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -127,6 +123,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
+                    android:layout_marginTop="5dp"
 
                     >
                     <ImageButton
@@ -155,6 +152,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/hit_later"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"

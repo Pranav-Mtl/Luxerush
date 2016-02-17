@@ -34,13 +34,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_white_heart"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 />
             <ImageButton
+                android:id="@+id/home_screen_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 android:background="@drawable/ic_cart_bag"
+                android:visibility="gone"
                 />
 
         </LinearLayout>
@@ -65,9 +67,10 @@
         >
 
         <TextView
+            android:id="@+id/detail_item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Item Description"
+            android:text=""
             android:padding="10dp"
             android:textStyle="bold"
             android:textColor="@color/textColorDark"
@@ -115,6 +118,7 @@
                     />
             </RelativeLayout>
             <LinearLayout
+                android:id="@+id/detail_layout_buying_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:weightSum="3"
@@ -130,7 +134,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Dress Name"
+                        android:text="Buying Price"
                         android:padding="5dp"
                         android:textColor="@color/textColorDark"
                         />
@@ -138,15 +142,28 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/detail_buying_original_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                />
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="1dp"
+                                android:background="@color/darkGray"
+                                android:layout_centerInParent="true"
+                                />
+                        </RelativeLayout>
+
                         <TextView
+                            android:id="@+id/detail_buying_price_percentage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rs 500"
-                            />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="20% off"
+                            android:text=""
                             android:layout_marginLeft="10dp"
                             android:textColor="@color/red"
                             />
@@ -161,21 +178,23 @@
                     android:weightSum="2"
                     >
                     <TextView
+                        android:id="@+id/detail_buying_discount_price"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:background="@color/darkGray"
-                        android:text="Rs. 500"
+                        android:text=""
                         android:gravity="center"
                         android:textColor="@color/textColorBlack"
                         />
                     <Button
+                        android:id="@+id/detail_buying_button_cart"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:background="@color/textColorBlack"
                         android:textColor="@color/textColorWhite"
-                        android:text="Add to Chart"
+                        android:text="Buy Now"
                         android:textAllCaps="false"
                         android:textSize="@dimen/small_text_size"
                         />
@@ -186,6 +205,7 @@
 
         <!-- item rent option layout-->
         <LinearLayout
+            android:id="@+id/detail_layout_rent_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="3"
@@ -212,15 +232,28 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/detail_rent_original_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            />
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="1dp"
+                            android:background="@color/darkGray"
+                            android:layout_centerInParent="true"
+                            />
+                    </RelativeLayout>
+
                     <TextView
+                        android:id="@+id/detail_rent_price_percentage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rs 500"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20% off"
+                        android:text=""
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/red"
                         />
@@ -235,21 +268,102 @@
                 android:weightSum="2"
                 >
                 <TextView
+                    android:id="@+id/detail_rent_discount_price"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@color/darkGray"
-                    android:text="Rs. 500/day"
+                    android:text=""
                     android:gravity="center"
                     android:textColor="@color/textColorBlack"
                     />
                 <Button
+                    android:id="@+id/detail_rent_button"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@color/textColorBlack"
                     android:textColor="@color/textColorWhite"
                     android:text="Get on Rent"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/small_text_size"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- item subscription option layout-->
+        <LinearLayout
+            android:id="@+id/detail_layout_subscription_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:visibility="gone"
+            android:background="@drawable/white_bg_shape"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subscription Price"
+                    android:padding="5dp"
+                    android:textColor="@color/textColorDark"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/detail_subscription_original_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        />
+                    <TextView
+                        android:id="@+id/detail_subscription_price_percentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/red"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                >
+                <TextView
+                    android:id="@+id/detail_subscription_discount_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkGray"
+                    android:text=""
+                    android:gravity="center"
+                    android:textColor="@color/textColorBlack"
+                    />
+                <Button
+                    android:id="@+id/detail_subscription_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/textColorBlack"
+                    android:textColor="@color/textColorWhite"
+                    android:text="Buy Now"
                     android:textAllCaps="false"
                     android:textSize="@dimen/small_text_size"
                     />
@@ -276,26 +390,14 @@
                 android:textColor="@color/textColorDark"
                 />
             <TextView
+                android:id="@+id/detail_dress_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="jjffjjnggjngjjgfpfpffkmfmfvmnnvnvnvnvnvnvvmmvvnbnbnbnkvbnbnbnbn"
+                android:text=""
                 />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Style Tip"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/textColorDark"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="jjffjjnggjngjjgfpfpffkmfmfvmnnvnvnvnvnvnvvmmvvnbnbnbnkvbnbnbnbn"
-                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -305,10 +407,11 @@
                 android:layout_marginTop="10dp"
                 />
             <TextView
+                android:id="@+id/detail_dress_material"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Cotton"
+                android:text=""
                 />
 
             <TextView
@@ -320,10 +423,11 @@
                 android:layout_marginTop="10dp"
                 />
             <TextView
+                android:id="@+id/detail_dress_size"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="jjffjjnggjngjjgfpfpffkmfmfvmnnvnvnvnvnvnvvmmvvnbnbnbnkvbnbnbnbn"
+                android:text=""
                 />
 
             <TextView
@@ -335,10 +439,11 @@
                 android:layout_marginTop="10dp"
                 />
             <TextView
+                android:id="@+id/detail_dress_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="jjffjjnggjngjjgfpfpffkmfmfvmnnvnvnvnvnvnvvmmvvnbnbnbnkvbnbnbnbn"
+                android:text=""
                 />
 
 
@@ -369,11 +474,13 @@
                 android:gravity="center"
                 >
                 <ImageButton
+                    android:id="@+id/detail_share_twitter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/ic_share_twitter"
                     />
                 <ImageButton
+                    android:id="@+id/detail_share_fb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/ic_share_fb"
@@ -381,6 +488,7 @@
                     android:layout_centerInParent="true"
                     />
                 <ImageButton
+                    android:id="@+id/detail_share_pinterest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -393,7 +501,7 @@
         <!-- item related products layout-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="400dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/white_bg_shape"
             android:orientation="vertical"
@@ -409,7 +517,14 @@
                 android:textStyle="bold"
                 />
 
-            <com.shoping.Container.GalleryPagerContainer
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycle_related_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+
+           <!-- <com.shoping.Container.GalleryPagerContainer
                 android:id="@+id/related_pager_container"
                 android:layout_width="match_parent"
                 android:layout_height="200dp">
@@ -421,7 +536,7 @@
                     android:layout_gravity="center" />
 
 
-            </com.shoping.Container.GalleryPagerContainer>
+            </com.shoping.Container.GalleryPagerContainer>-->
         </LinearLayout>
 
 

@@ -3,4 +3,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="facebook_app_id">147129795668657</string>
+    <string name="pinterest_app_id">4816696115734785333</string>
+
+    <string name="signin_fail">Email-ID or Mobile number or Password not exist.</string>
+    <string name="signup_fail">Email-ID or Mobile number already  exist.</string>
+
+    <string name="signin_fail_social">Email-ID not exist.</string>
+    <string name="signup_fail_social">Email-ID already exist.</string>
 </resources>

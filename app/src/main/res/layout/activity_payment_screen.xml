@@ -40,13 +40,66 @@
 
     </android.support.v7.widget.Toolbar>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
+
         android:gravity="center_horizontal"
         android:orientation="vertical"
         >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/ic_coupen_bg"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Have a Coupon?"
+                android:textColor="@color/textColorWhite"
+                android:textStyle="bold"
+                android:textSize="@dimen/big_text_size"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                >
+
+                <EditText
+                    android:id="@+id/payment_promo_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_coupon_textview"
+                    android:hint="Enter Code"
+                    android:padding="5dp"
+                    android:textColorHighlight="@color/white"
+                    android:textColor="@color/white"
+                    />
+
+                <Button
+                    android:id="@+id/payment_promo_code_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/min_button_size"
+                    android:text="Apply"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/textColorBlack"
+                    android:padding="10dp"
+                    android:textSize="@dimen/small_text_size"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,13 +107,11 @@
             android:text="We accept the following:"
             android:padding="10dp"
             android:textSize="@dimen/big_text_size"
-            android:textStyle="bold"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:gravity="center"
             >
 
@@ -98,7 +149,6 @@
             android:padding="10dp"
             android:layout_marginTop="10dp"
             android:textSize="@dimen/big_text_size"
-            android:textStyle="bold"
             />
 
         <LinearLayout
@@ -106,17 +156,18 @@
             android:layout_height="wrap_content"
             android:background="@drawable/white_bg_shape"
             android:padding="10dp"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             >
 
             <RadioGroup
+                android:id="@+id/radio_group_payment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
                 <RadioButton
+                    android:id="@+id/radio_button_debit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Credit/Debit card"
@@ -126,24 +177,28 @@
 
                     />
                 <RadioButton
+                    android:id="@+id/radio_button_cod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cash on delivery"
+                    android:text="Cash on Delivery"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/radio_button_selector"
+                    android:drawablePadding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:checked="true"
+                    />
+                <RadioButton
+                    android:id="@+id/radio_button_wallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wallet"
                     android:button="@null"
                     android:drawableLeft="@drawable/radio_button_selector"
                     android:drawablePadding="10dp"
                     android:layout_marginTop="10dp"
                     />
                 <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wallets"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/radio_button_selector"
-                    android:drawablePadding="10dp"
-                    android:layout_marginTop="10dp"
-                    />
-                <RadioButton
+                    android:id="@+id/radio_button_net"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Net Banking"
@@ -153,6 +208,7 @@
                     android:layout_marginTop="10dp"
                     />
                 <RadioButton
+                    android:id="@+id/radio_button_gift"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Gift Card"
@@ -165,6 +221,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/payment_place_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -178,6 +235,7 @@
             />
 
         <Button
+            android:id="@+id/payment_cancel_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -188,7 +246,10 @@
             android:padding="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
             />
     </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
