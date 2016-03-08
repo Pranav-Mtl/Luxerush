@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Luxerush.iml" filepath="$PROJECT_DIR$/Luxerush.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RangeBar/RangeBar.iml" filepath="$PROJECT_DIR$/RangeBar/RangeBar.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pdk/pdk.iml" filepath="$PROJECT_DIR$/pdk/pdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tabstrip/tabstrip.iml" filepath="$PROJECT_DIR$/tabstrip/tabstrip.iml" />
     </modules>
   </component>
 </project>

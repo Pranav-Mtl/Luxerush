@@ -56,7 +56,7 @@ public class CheckOutBL {
             JSONObject jsonObject = (JSONObject) jsonP.parse(jsonArrayObject.get(0).toString());
 
             personalDetail=jsonObject.get("personal_detail").toString();
-            state=jsonObject.get("state").toString();
+            state=jsonObject.get("city").toString();
             validateDetails(personalDetail);
             validateStates(state);
 
@@ -98,7 +98,7 @@ public class CheckOutBL {
             JSONArray jsonArrayObject = (JSONArray)obj;
             for(int i=0;i<jsonArrayObject.size();i++) {
                 JSONObject jsonObject = (JSONObject) jsonP.parse(jsonArrayObject.get(i).toString());
-                listStates.add(jsonObject.get("name").toString());
+                listStates.add(jsonObject.get("city").toString());
 
             }
 

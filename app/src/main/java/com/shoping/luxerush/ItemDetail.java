@@ -37,6 +37,7 @@ import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareDialog;
 import com.shoping.BE.ItemDetailBE;
@@ -64,6 +65,7 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
     TextView tvRentOriginalPrice,tvRentPercentage,tvRentDiscountPrice;
     TextView tvSubscriptionOriginalPrice,tvSubscriptionPercentage,tvSubscriptionDiscountPrice;
     TextView tvDescription,tvMaterial,tvSize,tvCode;
+    TextView tvConditionText,tvCondition;
 
     TextView tvText;
 
@@ -86,6 +88,8 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
     Animation anim;
 
     ProgressDialog progressDialog;
+
+    String arrayImage[];
 
     RelatedItemAdapter objRelatedItemAdapter;
 
@@ -123,6 +127,9 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
         tvRentOriginalPrice= (TextView) findViewById(R.id.detail_rent_original_price);
         tvRentDiscountPrice= (TextView) findViewById(R.id.detail_rent_discount_price);
         tvRentPercentage= (TextView) findViewById(R.id.detail_rent_price_percentage);
+
+        tvCondition= (TextView) findViewById(R.id.detail_dress_condition);
+        tvConditionText= (TextView) findViewById(R.id.detail_dress_condition_text);
 
         tvSubscriptionDiscountPrice= (TextView) findViewById(R.id.detail_subscription_discount_price);
         tvSubscriptionOriginalPrice= (TextView) findViewById(R.id.detail_subscription_original_price);
@@ -174,13 +181,18 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
         if(category.equalsIgnoreCase(Constant.CATEGORY_BUY)){
             llRent.setVisibility(View.GONE);
             llSubscription.setVisibility(View.GONE);
+            if(tag.equalsIgnoreCase(Constant.TAG_PRELOVED)){
+                tvCondition.setVisibility(View.VISIBLE);
+                tvConditionText.setVisibility(View.VISIBLE);
+            }
         }
         else if(category.equalsIgnoreCase(Constant.CATEGORY_RENT)){
             llBuy.setVisibility(View.GONE);
 
-            if(tag.equalsIgnoreCase(Constant.TAG_ALA_CARTE))
+            if(tag.equalsIgnoreCase(Constant.TAG_ALA_CARTE)) {
                 btnBuyRent.setText("Add to cart");
                 btnCart.setVisibility(View.VISIBLE);
+            }
 
         }
 
@@ -239,10 +251,14 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
                 tvRentOriginalPrice.setText("₹"+objItemDetailBE.getRentPrice());
                 tvSubscriptionOriginalPrice.setText("₹"+objItemDetailBE.getSubscriptionPrice());
 
+                tvCode.setText(objItemDetailBE.getCode());
+
+                tvCondition.setText(objItemDetailBE.getProductCondition());
+
                 objRelatedItemAdapter=new RelatedItemAdapter(getApplicationContext(),category,tag);
                 listCart.setAdapter(objRelatedItemAdapter);
 
-
+                arrayImage=objItemDetailBE.getProductImage();
                 ItemPageAdapter adapter=new ItemPageAdapter(getApplicationContext());
                 pager.setAdapter(adapter);
                 pager.setPadding(10,0,10,0);
@@ -334,12 +350,13 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.detail_rent_button:
                 if(tag.equalsIgnoreCase(Constant.TAG_ALA_CARTE)) {
+                    String ss[]=objItemDetailBE.getProductImage();
                     String cartJson = Util.getSharedPrefrenceValue(getApplicationContext(), Constant.SP_CART_ITEM);
                     if (cartJson == null || cartJson.trim().equalsIgnoreCase("[]")){
                         JSONObject js = new JSONObject();
                             js.put(Constant.KEY_Id, productID);
                             js.put(Constant.KEY_Name, objItemDetailBE.getProductName());
-                            js.put(Constant.KEY_Image, Constant.productDetailImages[0]);
+                            js.put(Constant.KEY_Image,ss[0]);
                             js.put(Constant.KEY_Size, objItemDetailBE.getSize());
                             js.put(Constant.KEY_Discount, objItemDetailBE.getRentDiscountPrice());
                             JSONArray ja = new JSONArray();
@@ -352,7 +369,7 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
                         JSONObject js = new JSONObject();
                         js.put(Constant.KEY_Id, productID);
                         js.put(Constant.KEY_Name, objItemDetailBE.getProductName());
-                        js.put(Constant.KEY_Image, Constant.productDetailImages[0]);
+                        js.put(Constant.KEY_Image,ss[0]);
                         js.put(Constant.KEY_Size, objItemDetailBE.getSize());
                         js.put(Constant.KEY_Discount, objItemDetailBE.getRentDiscountPrice());
 
@@ -410,8 +427,9 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
 
             imgPager= (ImageView) itemView.findViewById(R.id.list_pager_image);
 
+
             Picasso.with(getApplicationContext())
-                    .load(Constant.productDetailImages[position])
+                    .load(arrayImage[position])
                     .placeholder(R.drawable.ic_default_loading)
                     .resize(350,550)
                     .error(R.drawable.ic_default_loading)
@@ -425,10 +443,10 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
 
         @Override
         public int getCount() {
-            if(Constant.productDetailImages==null)
+            if(arrayImage==null)
             return 0;
 
-            return Constant.productDetailImages.length;
+            return arrayImage.length;
         }
 
         @Override
@@ -499,8 +517,5 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
             throw new RuntimeException("URLEncoder.encode() failed for " + s);
         }
     }
-
-
-
 
 }

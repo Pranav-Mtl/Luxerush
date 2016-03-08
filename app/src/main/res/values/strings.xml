@@ -7,6 +7,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="dealer_tab_one_title">Order Buy</string>
+    <string name="dealer_tab_two_title">Order Rent</string>
+    <string name="dealer_tab_three_title">Subscription</string>
+
     <string name="facebook_app_id">147129795668657</string>
     <string name="pinterest_app_id">4816696115734785333</string>
 

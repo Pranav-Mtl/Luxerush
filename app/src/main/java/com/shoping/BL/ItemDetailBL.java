@@ -83,6 +83,7 @@ public class ItemDetailBL {
             objItemDetailBE.setDescription(jsonObject.get("product_description").toString());
             objItemDetailBE.setProductType(jsonObject.get("product_type").toString());
             objItemDetailBE.setProductCondition(jsonObject.get("product_condition").toString());
+            objItemDetailBE.setCode(jsonObject.get("product_code").toString());
 
 
 
@@ -135,13 +136,15 @@ public class ItemDetailBL {
         try {
             Object obj =jsonP.parse(strValue);
             JSONArray jsonArrayObject = (JSONArray)obj;
-            Constant.productDetailImages=new String[jsonArrayObject.size()];
-
+            String ss[]=new String[jsonArrayObject.size()];
 
             for(int i=0;i<jsonArrayObject.size();i++) {
                 JSONObject jsonObject = (JSONObject) jsonP.parse(jsonArrayObject.get(i).toString());
-                Constant.productDetailImages[i]=jsonObject.get("image").toString();
+                ss[i]=jsonObject.get("image").toString();
+
             }
+
+            objItemDetailBE.setProductImage(ss);
 
         } catch (Exception e) {
 

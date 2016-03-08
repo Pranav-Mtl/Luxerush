@@ -7,11 +7,28 @@ import java.io.Serializable;
  */
 public class ItemDetailBE implements Serializable {
 
-    private String productName,buyingPrice,rentPrice,subscriptionPrice,size,color,tag,brand,description,productType,productCondition,buyingDiscountPrice,rentDiscountPrice;
+    private String productName,buyingPrice,rentPrice,subscriptionPrice,size,code,color,tag,brand,description,productType,productCondition,buyingDiscountPrice,rentDiscountPrice;
     private String jsonProductDetail,jsonProductImage,jsonRelatedProduct;
 
     private String productCategory,productID;
 
+    private String productImage[];
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String[] getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(String[] productImage) {
+        this.productImage = productImage;
+    }
 
     public String getProductCategory() {
         return productCategory;

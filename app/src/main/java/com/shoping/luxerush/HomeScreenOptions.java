@@ -3,6 +3,7 @@ package com.shoping.luxerush;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -72,8 +73,45 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
                             view.setBackgroundColor(getResources().getColor(R.color.lightGray));
                         }
 
+                        if(position==0){
+                            if(userID!=null){
+                                startActivity(new Intent(getApplicationContext(),Profile.class));
+                            }
+                            else
+                            {
+                                startActivity(new Intent(getApplicationContext(), HowItWork.class));
+                            }
+                        }
+                        if(position==3){
+                            if(userID!=null){
+                                startActivity(new Intent(getApplicationContext(),OrderHistory.class));
+                            }
+                            else
+                            {
+                                startActivity(new Intent(getApplicationContext(),HowItWork.class));
+                            }
+                        }
+                        if(position==4){
 
+                            Util.rateUs(getApplicationContext());
 
+                        }
+                        if(position==5){
+                            if(userID!=null){
+                                startActivity(new Intent(getApplicationContext(),Help.class));
+                            }
+                            else
+                            {
+                                startActivity(new Intent(getApplicationContext(),HowItWork.class));
+                            }
+
+                        }
+                        if(position==6){
+                            Util.setSharedPrefrenceValue(getApplicationContext(), Constant.PREFS_NAME, Constant.SP_LOGIN_ID, null);
+                            Intent intent = new Intent(getApplicationContext(), HowItWork.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
 
                     }
                 }));
@@ -147,31 +185,31 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
 
         switch (v.getId()){
             case R.id.home_options_all:
-                Intent intentAll=new Intent(getApplicationContext(),ItemsList.class);
+                Intent intentAll=new Intent(getApplicationContext(),HomeSelection.class);
                 intentAll.putExtra("Category", Constant.CATEGORY_ALL);
                 intentAll.putExtra("Tag",Constant.TAG_ALL);
                 startActivity(intentAll);
                 break;
             case R.id.home_options_buy:
-                Intent intentBuy=new Intent(getApplicationContext(),ItemsList.class);
+                Intent intentBuy=new Intent(getApplicationContext(),HomeSelection.class);
                 intentBuy.putExtra("Category",Constant.CATEGORY_BUY);
                 intentBuy.putExtra("Tag",Constant.TAG_BUY);
                 startActivity(intentBuy);
                 break;
             case R.id.home_options_preloved:
-                Intent intentLoved=new Intent(getApplicationContext(),ItemsList.class);
+                Intent intentLoved=new Intent(getApplicationContext(),HomeSelection.class);
                 intentLoved.putExtra("Category",Constant.CATEGORY_BUY);
                 intentLoved.putExtra("Tag", Constant.TAG_PRELOVED);
                 startActivity(intentLoved);
                 break;
             case R.id.home_options_new:
-                Intent intentNew=new Intent(getApplicationContext(),ItemsList.class);
+                Intent intentNew=new Intent(getApplicationContext(),HomeSelection.class);
                 intentNew.putExtra("Category",Constant.CATEGORY_BUY);
                 intentNew.putExtra("Tag", Constant.TAG_NEW);
                 startActivity(intentNew);
                 break;
             case R.id.home_options_rent:
-                Intent intentRent=new Intent(getApplicationContext(),ItemsList.class);
+                Intent intentRent=new Intent(getApplicationContext(),HomeSelection.class);
                 intentRent.putExtra("Category",Constant.CATEGORY_RENT);
                 intentRent.putExtra("Tag",Constant.TAG_RENT);
                 startActivity(intentRent);
@@ -197,7 +235,7 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
                 }
                 break;
             case R.id.home_options_alacarte:
-                Intent intentCarte=new Intent(getApplicationContext(),ItemsList.class);
+                Intent intentCarte=new Intent(getApplicationContext(),HomeSelection.class);
                 intentCarte.putExtra("Category",Constant.CATEGORY_RENT);
                 intentCarte.putExtra("Tag", Constant.TAG_ALA_CARTE);
                 startActivity(intentCarte);
@@ -235,5 +273,32 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
                 progressDialog.dismiss();
             }
         }
+    }
+
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP );//***Change Here***
+            startActivity(intent);
+
+            // System.exit(0);
+            return;
+        }
+
+        Drawer.closeDrawers();
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
 }

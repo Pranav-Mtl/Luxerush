@@ -110,7 +110,7 @@
         <!-- second layout -->
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="5dp"
             android:background="@color/golden"
             />
 
@@ -122,7 +122,7 @@
             android:gravity="center_vertical"
             >
             <TextView
-                android:layout_width="2dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:background="@color/golden"
                 />
@@ -164,7 +164,7 @@
             </LinearLayout>
 
             <TextView
-                android:layout_width="2dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:background="@color/golden"
                 />
@@ -177,7 +177,7 @@
             android:layout_height="wrap_content"
             >
             <TextView
-                android:layout_width="2dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:background="@color/golden"
                 />
@@ -207,11 +207,6 @@
                     />
 
             </LinearLayout>
-            <TextView
-                android:layout_width="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/golden"
-                />
 
 
             <LinearLayout
@@ -242,7 +237,7 @@
             </LinearLayout>
 
             <TextView
-                android:layout_width="2dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:background="@color/golden"
 
@@ -251,7 +246,7 @@
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="5dp"
             android:background="@color/golden"
 
             />
@@ -266,7 +261,7 @@
             >
 
             <TextView
-                android:layout_width="2dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:background="@color/golden"
                 />
@@ -309,7 +304,7 @@
 
 
             <TextView
-                android:layout_width="2dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:background="@color/golden"
                 />
@@ -322,7 +317,7 @@
             android:weightSum="2"
             >
             <TextView
-                android:layout_width="2dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:background="@color/golden"
                 />
@@ -353,11 +348,7 @@
                     />
 
             </LinearLayout>
-            <TextView
-                android:layout_width="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/golden"
-                />
+
 
             <LinearLayout
                 android:id="@+id/home_options_alacarte"
@@ -386,7 +377,7 @@
 
             </LinearLayout>
             <TextView
-                android:layout_width="2dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:background="@color/golden"
                 />
@@ -394,7 +385,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="5dp"
             android:background="@color/golden"
             />
 

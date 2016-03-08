@@ -23,9 +23,17 @@ public class Constant {
     public static String SP_FILTER_CATEGORY="category";
     public static String SP_FILTER_MIN="min";
     public static String SP_FILTER_MAX="max";
+    public static String SP_FILTER_BANNER="banner";
     public static String SP_PROMO_ID="promo_id";
-
     public static String SP_CART_ITEM="cart";
+    public static String SP_ORDER_BUY="buy";
+    public static String SP_ORDER_RENT="rent";
+    public static String SP_ORDER_SUBSCRIPTION="subscription";
+
+    public static String SP_PRODUCT_ALL="all";
+    public static String SP_PRODUCT_BAG="bag";
+    public static String SP_PRODUCT_CLOTH="cloth";
+
 
     public static String NAME="Sign in";
 
@@ -61,6 +69,11 @@ public class Constant {
     public static String WS_SUBSCRIPTION_LIST="subscribe_product.php";
     public static String WS_SUBSCRIPTION_LIST_DETAIL="subscribe_product_detail.php";
     public static String WS_TAKE_SUBSCRIPTION_PRODUCT="subscribe_rent_order.php";
+    public static String WS_FILTER="filter.php";
+    public static String WS_UPDATE_PROFILE="profile_updated.php";
+    public static String WS_CHANGE_PASSWORD="change_password.php";
+    public static String WS_ORDER_HISTORY="order_history.php";
+    public static String WS_BRAND_ALL="product_brands.php";
 
 
     /* -----------------------TAG SELECTED----------------------*/
@@ -100,6 +113,14 @@ public class Constant {
     public static String productTag[];
     public static String productWishlist[];
     public static String productKeyword[];
+
+
+    /* Banner */
+
+    public static String bannerID[];
+    public static String bannerImage[];
+    public static String bannerType[];
+    public static String bannerCategory[];
 
     /* Related Items List variables*/
 
@@ -149,6 +170,57 @@ public class Constant {
     public static String productNameSubs[];
     public static String productImageSubs[];
     public static String productDiscountedPriceSubs[];
+
+      /* ORDER HISTORY BUY*/
+
+    public static String buyOrderID[];
+    public static String buyOrderDate[];
+    public static String buyOrderStatus[];
+    public static String buyOrderPaymentType[];
+    public static String buyOrderPrice[];
+    public static String buyOrderDeliverydate[];
+    public static String buyOrderName[];
+    public static String buyOrderImage[];
+    public static String buyOrderAddress[];
+
+    /* ORDER HISTORY SUBSCRIPTION */
+
+    public static String subscriptionOrderID[];
+    public static String subscriptionOrderDate[];
+    public static String subscriptionOrderStatus[];
+    public static String subscriptionOrderPrice[];
+    public static String subscriptionOrderName[];
+    public static String subscriptionOrderImage[];
+
+
+    /* ORDER HISTORY RENT*/
+
+    public static String rentOrderID[];
+    public static String rentOrderDate[];
+    public static String rentOrderStatus[];
+    public static String rentOrderPaymentType[];
+    public static String rentOrderPrice[];
+    public static String rentOrderDeliverydate[];
+    public static String rentOrderAddress[];
+    public static String rentOrderProducts[];
+
+
+    /* Rent product */
+
+    public static String rentProductName[];
+    public static String rentProductImage[];
+    public static String rentProductPrice[];
+    public static String rentProductStart[];
+    public static String rentProductEnd[];
+    public static String rentProductCondition[];
+    public static String rentProductReturned[];
+
+
+    /* */
+
+    public static String allBrandID[];
+    public static String allBrandName[];
+    public static String allBrandImage[];
 
 
 

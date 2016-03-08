@@ -24,7 +24,11 @@
             android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize">
 
-
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_home_logo"
+                />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -58,12 +62,20 @@
             android:elevation="4dp"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <com.shoping.Container.GalleryPagerContainer
+                android:id="@+id/banner_pager_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:background="@drawable/ic_top_default"
-                />
+                android:background="@color/white"
+                android:layout_height="180dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/item_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center" />
+
+
+            </com.shoping.Container.GalleryPagerContainer>
         </LinearLayout>
 
 
@@ -121,16 +133,13 @@
         android:id="@+id/fab_filter"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_margin="16dp"
         app:elevation="4dp"
         app:borderWidth="0dp"
         app:backgroundTint="#000"
         android:src="@drawable/ic_filter_icon"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-
         />
 
     </RelativeLayout>

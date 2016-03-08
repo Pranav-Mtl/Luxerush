@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-import com.pinterest.android.pdk.PDKClient;
+
 import com.shoping.Configuration.Util;
 import com.shoping.Constant.Constant;
 
@@ -28,8 +28,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        PDKClient.configureInstance(this,YOUR_APP_ID);
-        PDKClient.getInstance().onConnect(this);
+     /*   PDKClient.configureInstance(this,YOUR_APP_ID);
+        PDKClient.getInstance().onConnect(this);*/
 
         deviceId= Util.getSharedPrefrenceValue(getApplicationContext(), Constant.SP_DEVICE_ID);
         userID=Util.getSharedPrefrenceValue(getApplicationContext(),Constant.SP_LOGIN_ID);

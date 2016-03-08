@@ -51,9 +51,10 @@ public class SingleProductBuy extends AppCompatActivity implements View.OnClickL
 
         userID= Util.getSharedPrefrenceValue(getApplicationContext(), Constant.SP_LOGIN_ID);
 
+        String ss[]=objItemDetailBE.getProductImage();
         try {
             Picasso.with(getApplicationContext())
-                    .load(Constant.productDetailImages[0])
+                    .load(ss[0])
                     .placeholder(R.drawable.ic_default_loading)
                     .resize(275, 525)
                     .error(R.drawable.ic_default_loading)

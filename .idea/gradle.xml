@@ -10,8 +10,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/RangeBar" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/pdk" />
+            <option value="$PROJECT_DIR$/tabstrip" />
           </set>
         </option>
       </GradleProjectSettings>

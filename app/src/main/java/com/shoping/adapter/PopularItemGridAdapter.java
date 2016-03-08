@@ -35,19 +35,24 @@ public class PopularItemGridAdapter extends  RecyclerView.Adapter<PopularItemGri
 
     WishListBL objWishListBL;
 
-    public PopularItemGridAdapter(Context context,String category,String tag,String userID){
+    public PopularItemGridAdapter(Context context,String category,String tag,String userID,String brand){
         mContext=context;
         objItemsListBL=new ItemsListBL();
         objWishListBL=new WishListBL();
         this.category=category;
         this.tag=tag;
         this.userID=userID;
-        objItemsListBL.getList(category,tag,mContext,userID);
+        objItemsListBL.getList(category,tag,mContext,userID,brand);
     }
 
-    public PopularItemGridAdapter(Context context){
+    public PopularItemGridAdapter(Context context,String category,String tag,String userID,String brand,String categoryFilter,String size,String minPrice,String maxPrice){
         mContext=context;
-
+        objItemsListBL=new ItemsListBL();
+        objWishListBL=new WishListBL();
+        this.category=category;
+        this.tag=tag;
+        this.userID=userID;
+        objItemsListBL.getFilterList(category,tag,mContext,userID, brand,categoryFilter, size, minPrice, maxPrice);
     }
 
     @Override
