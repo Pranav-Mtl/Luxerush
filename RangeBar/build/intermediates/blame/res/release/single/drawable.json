@@ -44,12 +44,12 @@
         "source": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
-        "source": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\drawable\\abc_tab_indicator_material.xml"
-    },
-    {
         "merged": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
         "source": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
         "merged": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",

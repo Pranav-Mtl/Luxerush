@@ -44,12 +44,12 @@
         "source": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\drawable-xhdpi\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
-        "source": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\drawable-xhdpi\\abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
         "merged": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
         "source": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\drawable-xhdpi\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\drawable-xhdpi\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "D:\\workspace\\Luxerush\\RangeBar\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",

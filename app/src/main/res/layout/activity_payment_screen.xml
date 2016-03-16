@@ -11,8 +11,6 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        app:theme="@style/Toolbar_Theme"
         android:elevation="4dp"
 
         android:background="@color/colorPrimary"
@@ -99,6 +97,42 @@
                     />
             </LinearLayout>
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_rent_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_bg_shape"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/rent_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:background="@color/textColorBlack"
+                android:textColor="@color/white"
+                android:text="Select Date"
+                android:minHeight="40dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+
+                />
+
+            <Spinner
+                android:id="@+id/rent_slot"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_spinner_bg"
+
+                ></Spinner>
+            </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"

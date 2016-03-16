@@ -10,8 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shoping.BE.CheckOutBE;
@@ -41,6 +44,12 @@ public class PaymentScreen extends AppCompatActivity implements View.OnClickList
 
     RadioGroup rbPaymentType;
 
+    LinearLayout llRent;
+    TextView tvDate;
+    Spinner spnSlot;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +65,11 @@ public class PaymentScreen extends AppCompatActivity implements View.OnClickList
         btnPlaceOrder= (Button) findViewById(R.id.payment_place_order);
         btnCancelOrder= (Button) findViewById(R.id.payment_cancel_order);
         rbPaymentType= (RadioGroup) findViewById(R.id.radio_group_payment);
+        llRent= (LinearLayout) findViewById(R.id.layout_rent_date);
+        tvDate= (TextView) findViewById(R.id.rent_date);
+        spnSlot= (Spinner) findViewById(R.id.rent_slot);
 
+        tvDate.setOnClickListener(this);
         btnApplyCode.setOnClickListener(this);
         btnCancelOrder.setOnClickListener(this);
         btnPlaceOrder.setOnClickListener(this);
@@ -122,6 +135,8 @@ public class PaymentScreen extends AppCompatActivity implements View.OnClickList
                     new CheckoutPayment().execute(userID, promoID, promoCode,paymentType);
                 }
 
+                break;
+            case R.id.rent_date:
                 break;
         }
     }

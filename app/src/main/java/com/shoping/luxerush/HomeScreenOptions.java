@@ -45,6 +45,8 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
 
     View _itemColoured;
 
+    public int category_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -185,36 +187,42 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
 
         switch (v.getId()){
             case R.id.home_options_all:
+                category_id=1;
                 Intent intentAll=new Intent(getApplicationContext(),HomeSelection.class);
                 intentAll.putExtra("Category", Constant.CATEGORY_ALL);
                 intentAll.putExtra("Tag",Constant.TAG_ALL);
                 startActivity(intentAll);
                 break;
             case R.id.home_options_buy:
+                category_id=2;
                 Intent intentBuy=new Intent(getApplicationContext(),HomeSelection.class);
                 intentBuy.putExtra("Category",Constant.CATEGORY_BUY);
                 intentBuy.putExtra("Tag",Constant.TAG_BUY);
                 startActivity(intentBuy);
                 break;
             case R.id.home_options_preloved:
+                category_id=3;
                 Intent intentLoved=new Intent(getApplicationContext(),HomeSelection.class);
                 intentLoved.putExtra("Category",Constant.CATEGORY_BUY);
                 intentLoved.putExtra("Tag", Constant.TAG_PRELOVED);
                 startActivity(intentLoved);
                 break;
             case R.id.home_options_new:
+                category_id=4;
                 Intent intentNew=new Intent(getApplicationContext(),HomeSelection.class);
                 intentNew.putExtra("Category",Constant.CATEGORY_BUY);
                 intentNew.putExtra("Tag", Constant.TAG_NEW);
                 startActivity(intentNew);
                 break;
             case R.id.home_options_rent:
+                category_id=5;
                 Intent intentRent=new Intent(getApplicationContext(),HomeSelection.class);
                 intentRent.putExtra("Category",Constant.CATEGORY_RENT);
                 intentRent.putExtra("Tag",Constant.TAG_RENT);
                 startActivity(intentRent);
                 break;
             case R.id.home_options_subscription:
+                category_id=6;
                 if(userID==null) {
                     startActivity(new Intent(getApplicationContext(),Login.class));
                     Toast.makeText(getApplicationContext(),"Please Login First",Toast.LENGTH_SHORT).show();
@@ -235,6 +243,7 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
                 }
                 break;
             case R.id.home_options_alacarte:
+                category_id=7;
                 Intent intentCarte=new Intent(getApplicationContext(),HomeSelection.class);
                 intentCarte.putExtra("Category",Constant.CATEGORY_RENT);
                 intentCarte.putExtra("Tag", Constant.TAG_ALA_CARTE);
