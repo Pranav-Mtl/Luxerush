@@ -89,24 +89,26 @@
         <activity
             android:name=".SubscriptionCheckout"
             android:label="" />
-        <activity android:name=".Help"
-            android:label=""
-            />
-        <activity android:name=".FilterPrice"
-            android:label=""
-            />
-        <activity android:name=".Profile"
-            android:label=""
-            />
-        <activity android:name=".OrderHistory"
-            android:label=""
-            />
-        <activity android:name=".OrderRentDetail"
-            android:label=""
-            ></activity>
-        <activity android:name=".HomeSelection"
-            android:label=""
-            ></activity>
+        <activity
+            android:name=".Help"
+            android:label="" />
+        <activity
+            android:name=".FilterPrice"
+            android:label="" />
+        <activity
+            android:name=".Profile"
+            android:label="" />
+        <activity
+            android:name=".OrderHistory"
+            android:label="" />
+        <activity
+            android:name=".OrderRentDetail"
+            android:label="" />
+        <activity
+            android:name=".HomeSelection"
+            android:label="" />
+        <activity android:name=".BuyWebView" />
+        <activity android:name=".SubscriptionItemPayment"></activity>
     </application>
 
 </manifest>

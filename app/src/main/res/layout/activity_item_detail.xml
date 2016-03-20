@@ -31,12 +31,9 @@
             android:layout_gravity="end"
             android:orientation="horizontal">
 
+
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_search"
-                />
-            <ImageButton
+                android:id="@+id/home_screen_wishlist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_white_heart"

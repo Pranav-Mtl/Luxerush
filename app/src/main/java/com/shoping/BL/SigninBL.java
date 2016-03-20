@@ -34,7 +34,7 @@ public class SigninBL {
         try
         {
 
-            String URL="email="+objSigninBE.getEmail()+"&pass="+objSigninBE.getPassword()+"&gcm_id="+objSigninBE.getGcm()+ "&device_id="+objSigninBE.getDevice();
+            String URL="email="+objSigninBE.getEmail()+"&pass="+objSigninBE.getPassword()+"&gcm_id="+objSigninBE.getGcm()+ "&device_id="+objSigninBE.getDevice()+"&device_type="+"android";
             text= RestFullWS.serverRequest(URL, Constant.WS_SIGNIN);
 
         }
@@ -85,7 +85,7 @@ public class SigninBL {
         try
         {
             //http://appslure.in/luxerush/webservices/social_login.php?email=abcde@gmail.com&pass=abc&gcm_id=hgh&device_id=hjhfj
-            String URL="email="+objSigninBE.getEmail()+"&gcm_id="+objSigninBE.getGcm()+ "&device_id="+objSigninBE.getDevice();
+            String URL="email="+objSigninBE.getEmail()+"&gcm_id="+objSigninBE.getGcm()+ "&device_id="+objSigninBE.getDevice()+"&device_type="+"android";
             text= RestFullWS.serverRequest(URL, Constant.WS_SIGNIN_SOCIAL);
 
         }

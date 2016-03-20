@@ -84,7 +84,11 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
                                 startActivity(new Intent(getApplicationContext(), HowItWork.class));
                             }
                         }
-                        if(position==3){
+
+                        if(position==1){
+                            Drawer.closeDrawers();
+                        }
+                        if(position==2){
                             if(userID!=null){
                                 startActivity(new Intent(getApplicationContext(),OrderHistory.class));
                             }
@@ -93,12 +97,12 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
                                 startActivity(new Intent(getApplicationContext(),HowItWork.class));
                             }
                         }
-                        if(position==4){
+                        if(position==3){
 
                             Util.rateUs(getApplicationContext());
 
                         }
-                        if(position==5){
+                        if(position==4){
                             if(userID!=null){
                                 startActivity(new Intent(getApplicationContext(),Help.class));
                             }
@@ -108,7 +112,7 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
                             }
 
                         }
-                        if(position==6){
+                        if(position==5){
                             Util.setSharedPrefrenceValue(getApplicationContext(), Constant.PREFS_NAME, Constant.SP_LOGIN_ID, null);
                             Intent intent = new Intent(getApplicationContext(), HowItWork.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -229,7 +233,7 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
                 }
                 else
                 {
-                    if(objHomeScreenBE.getSubscribe().equalsIgnoreCase("N")) {
+                    if(objHomeScreenBE.getSubscribe().equalsIgnoreCase("N") || objHomeScreenBE.getSubscribe().equalsIgnoreCase("") ) {
                         Intent intentSubscription = new Intent(getApplicationContext(), SubscriptionPackages.class);
                         intentSubscription.putExtra("Category", Constant.CATEGORY_RENT);
                         intentSubscription.putExtra("Tag", Constant.TAG_SUBSCRIPTION);
@@ -273,7 +277,8 @@ public class HomeScreenOptions extends AppCompatActivity implements View.OnClick
         @Override
         protected void onPostExecute(String s) {
             try{
-
+                    Constant.NAME=objHomeScreenBE.getName();
+                drawerAdapter.notifyDataSetChanged();
             }catch (NullPointerException e){
 
             }catch (Exception e){

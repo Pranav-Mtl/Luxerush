@@ -11,6 +11,8 @@ import org.json.simple.parser.JSONParser;
 /**
  * Created by appslure on 13-02-2016.
  */
+
+
 public class SubscriptionDetailBL {
 
     /*  Fetch All Routes when user comes first time  */
@@ -42,9 +44,6 @@ public class SubscriptionDetailBL {
                 brand=jsonObject.get("brand").toString();
                 parseBrandJson(brand);
                 parseDetail(detail);
-
-
-
 
         } catch (Exception e) {
 

@@ -1,7 +1,9 @@
 package com.shoping.BL;
 
 import android.content.Context;
+import android.util.Log;
 
+import com.shoping.BE.BuyWebViewBE;
 import com.shoping.Configuration.Util;
 import com.shoping.Constant.Constant;
 import com.shoping.WS.RestFullWS;
@@ -16,8 +18,9 @@ import org.json.simple.parser.JSONParser;
 public class SubscriptionPaymentBL {
 
     Context mContext;
-    public String getSubscription(String userID,String packageID,String paymenType,Context context){
-
+    BuyWebViewBE objBuyWebViewBE;
+    public String getSubscription(String userID,String packageID,String paymenType,Context context,BuyWebViewBE buyWebViewBE){
+        objBuyWebViewBE=buyWebViewBE;
         mContext=context;
         String result=callWSSubscription(userID, packageID, paymenType);
         String status=validateSubscription(result);
@@ -45,14 +48,33 @@ public class SubscriptionPaymentBL {
     }
 
     private String validateSubscription(String strValue)    {
-        String status="";
+        boolean status=false;
         JSONParser jsonP=new JSONParser();
 
         try {
             Object obj =jsonP.parse(strValue);
             JSONArray jsonArrayObject = (JSONArray)obj;
             JSONObject jsonObject = (JSONObject) jsonP.parse(jsonArrayObject.get(0).toString());
-            status=jsonObject.get("result").toString();
+            status=(boolean)jsonObject.get("success");
+
+            objBuyWebViewBE.setStatus((boolean) jsonObject.get("success"));
+            Log.d("STATUS URL-->", status + "");
+
+            if(status)
+            {
+
+                /*String link=jsonObject.get("link").toString();
+                Log.d("link URL-->",link);*/
+
+                objBuyWebViewBE.setName(jsonObject.get("name").toString());
+                objBuyWebViewBE.setPhone(jsonObject.get("phone").toString());
+                objBuyWebViewBE.setEmail(jsonObject.get("email").toString());
+
+                jsonObject=(JSONObject)jsonP.parse(jsonObject.get("link").toString());
+                objBuyWebViewBE.setUrl(jsonObject.get("url").toString());
+
+
+            }
 
 
 
@@ -60,6 +82,6 @@ public class SubscriptionPaymentBL {
 
 
         }
-        return status;
+        return "";
     }
 }

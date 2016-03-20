@@ -93,6 +93,8 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
 
     RelatedItemAdapter objRelatedItemAdapter;
 
+    ImageButton btnWishList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,6 +112,7 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
 
     private void initialize(){
         mContainer = (GalleryPagerContainer) findViewById(R.id.item_pager_container);
+        btnWishList= (ImageButton) findViewById(R.id.home_screen_wishlist);
 
         progressDialog=new ProgressDialog(ItemDetail.this);
 
@@ -165,6 +168,7 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
         btnAddCart.setOnClickListener(this);
         btnBuyRent.setOnClickListener(this);
         btnSubscription.setOnClickListener(this);
+        btnWishList.setOnClickListener(this);
 
         objItemDetailBL=new ItemDetailBL();
         objItemDetailBE=new ItemDetailBE();
@@ -342,6 +346,8 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
                 }
                 break;
             case R.id.detail_buying_button_cart:
+                category=Constant.CATEGORY_BUY;
+                objItemDetailBE.setProductCategory(category);
                 Intent intentCart=new Intent(getApplicationContext(),SingleProductBuy.class);
                 intentCart.putExtra("ItemDetailBE",objItemDetailBE);
                 intentCart.putExtra("Tag",category);
@@ -349,6 +355,8 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
                 startActivity(intentCart);
                 break;
             case R.id.detail_rent_button:
+                category=Constant.CATEGORY_RENT;
+                objItemDetailBE.setProductCategory(category);
                 if(tag.equalsIgnoreCase(Constant.TAG_ALA_CARTE)) {
                     String ss[]=objItemDetailBE.getProductImage();
                     String cartJson = Util.getSharedPrefrenceValue(getApplicationContext(), Constant.SP_CART_ITEM);
@@ -401,6 +409,12 @@ public class ItemDetail extends AppCompatActivity implements View.OnClickListene
                 intentSubscription.putExtra("Tag",category);
                 intentSubscription.putExtra("ID",productID);
                 startActivity(intentSubscription);
+                break;
+            case R.id.home_screen_wishlist:
+                Intent intentWish=new Intent(getApplicationContext(),WishList.class);
+                intentWish.putExtra("Category",category);
+                intentWish.putExtra("Tag", tag);
+                startActivity(intentWish);
                 break;
         }
     }

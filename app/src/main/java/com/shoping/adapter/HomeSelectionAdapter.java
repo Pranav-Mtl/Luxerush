@@ -43,10 +43,10 @@ public class HomeSelectionAdapter extends  RecyclerView.Adapter<HomeSelectionAda
 
     @Override
     public void onBindViewHolder(HomeSelectionHolder holder, int position) {
-        //holder.tvName.setText(Constant.allBrandName[position]);
+        holder.tvName.setText(Constant.allBrandName[position]);
 
         Picasso.with(mContext)
-                .load(Constant.allBrandName[position])
+                .load(Constant.allBrandImage[position])
                 .placeholder(R.drawable.ic_default_loading)
                 .error(R.drawable.ic_default_loading)
                 .into(holder.ivImage);

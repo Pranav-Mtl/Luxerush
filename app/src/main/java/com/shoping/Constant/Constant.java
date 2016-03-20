@@ -44,9 +44,9 @@ public class Constant {
     public static String WS_RESPONSE_SUCCESS="success";
     public static String WS_RESPONSE_FAILURE="failure";
 
-    public static String TITLES_LOGIN[] = {"Home","My Account","Track Order","Rate this App","Help","Signout"};
+    public static String TITLES_LOGIN[] = {"Home","Track Order","Rate this App","Help","Signout"};
 
-    public static int ICONS[] = {R.drawable.ic_side_home,R.drawable.ic_side_account,R.drawable.ic_side_track,R.drawable.ic_side_rate,R.drawable.ic_side_help,R.drawable.ic_side_signout};
+    public static int ICONS[] = {R.drawable.ic_side_home,R.drawable.ic_side_track,R.drawable.ic_side_rate,R.drawable.ic_side_help,R.drawable.ic_side_signout};
 
 
     /* -----------web services-------------------*/
@@ -54,6 +54,7 @@ public class Constant {
     public static String WS_SIGNUP="signup.php";
     public static String WS_SIGNUP_social="social_signup.php";
     public static String WS_SIGNIN="login.php";
+    public static String WS_HELP="help.php";
     public static String WS_SIGNIN_SOCIAL="social_login.php";
     public static String WS_ITEM_LIST="product_list.php";
     public static String WS_ITEM_DETAIL="product_detail.php";
@@ -74,6 +75,7 @@ public class Constant {
     public static String WS_CHANGE_PASSWORD="change_password.php";
     public static String WS_ORDER_HISTORY="order_history.php";
     public static String WS_BRAND_ALL="product_brands.php";
+    public static String WS_Get_Slots="slot.php";
 
 
     /* -----------------------TAG SELECTED----------------------*/

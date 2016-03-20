@@ -104,15 +104,16 @@
             android:layout_height="wrap_content"
             android:background="@drawable/white_bg_shape"
             android:padding="10dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:orientation="horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
             android:weightSum="2"
             android:gravity="center"
             >
             <TextView
                 android:id="@+id/rent_date"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:layout_height="40dp"
                 android:background="@color/textColorBlack"
@@ -126,9 +127,10 @@
 
             <Spinner
                 android:id="@+id/rent_slot"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/ic_spinner_bg"
 
                 ></Spinner>
@@ -200,21 +202,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
-                <RadioButton
-                    android:id="@+id/radio_button_debit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Credit/Debit card"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/radio_button_selector"
-                    android:drawablePadding="10dp"
 
-                    />
                 <RadioButton
                     android:id="@+id/radio_button_cod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cash on Delivery"
+                    android:text="COD"
                     android:button="@null"
                     android:drawableLeft="@drawable/radio_button_selector"
                     android:drawablePadding="10dp"
@@ -225,32 +218,13 @@
                     android:id="@+id/radio_button_wallet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wallet"
+                    android:text="Online"
                     android:button="@null"
                     android:drawableLeft="@drawable/radio_button_selector"
                     android:drawablePadding="10dp"
                     android:layout_marginTop="10dp"
                     />
-                <RadioButton
-                    android:id="@+id/radio_button_net"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Net Banking"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/radio_button_selector"
-                    android:drawablePadding="10dp"
-                    android:layout_marginTop="10dp"
-                    />
-                <RadioButton
-                    android:id="@+id/radio_button_gift"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gift Card"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/radio_button_selector"
-                    android:drawablePadding="10dp"
-                    android:layout_marginTop="10dp"
-                    />
+
             </RadioGroup>
         </LinearLayout>
 

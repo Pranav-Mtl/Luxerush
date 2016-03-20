@@ -136,7 +136,6 @@ public class CheckOut extends AppCompatActivity implements View.OnClickListener 
                 etName.setText(objCheckOutBE.getName());
                 etEmail.setText(objCheckOutBE.getEmail());
                 etAddress1.setText(objCheckOutBE.getAddress());
-                etCity.setText(objCheckOutBE.getCity());
                 etZip.setText(objCheckOutBE.getZip());
                 etMobile.setText(objCheckOutBE.getMobile());
 
@@ -167,10 +166,9 @@ public class CheckOut extends AppCompatActivity implements View.OnClickListener 
         strEmail=etEmail.getText().toString();
         strAddress1=etAddress1.getText().toString();
         strAddress2=etAddress2.getText().toString();
-        strCity=etCity.getText().toString();
         strZip=etZip.getText().toString();
         strMobile=etMobile.getText().toString();
-        strStates=spnStates.getSelectedItem().toString();
+        strCity=spnStates.getSelectedItem().toString();
 
         if(strName.trim().length()==0){
             etName.setError("Required");
@@ -194,11 +192,6 @@ public class CheckOut extends AppCompatActivity implements View.OnClickListener 
             flag=false;
         }
 
-        if(strCity.trim().length()==0){
-            etCity.setError("Required");
-            flag=false;
-        }
-
         if(strZip.trim().length()==0){
             etZip.setError("Required");
             flag=false;
@@ -209,8 +202,8 @@ public class CheckOut extends AppCompatActivity implements View.OnClickListener 
             flag=false;
         }
 
-        if(strStates.trim().equalsIgnoreCase("Select State")){
-            Toast.makeText(getApplicationContext(),"Please select state",Toast.LENGTH_LONG).show();
+        if(strCity.trim().equalsIgnoreCase("Select City")){
+            Toast.makeText(getApplicationContext(),"Please select city",Toast.LENGTH_LONG).show();
             flag=false;
         }
         return flag;

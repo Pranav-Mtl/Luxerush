@@ -1,6 +1,7 @@
 package com.shoping.luxerush;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.shoping.BE.BuyWebViewBE;
 import com.shoping.BL.SubscriptionPaymentBL;
 import com.shoping.Configuration.Util;
 import com.shoping.Constant.Constant;
@@ -32,6 +34,8 @@ public class SubscriptionPayment extends AppCompatActivity implements View.OnCli
     String userID;
 
     String packageID;
+
+    BuyWebViewBE objBuyWebViewBE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,7 @@ public class SubscriptionPayment extends AppCompatActivity implements View.OnCli
         packageID=getIntent().getStringExtra("PackageID");
 
         objSubscriptionPaymentBL=new SubscriptionPaymentBL();
+        objBuyWebViewBE=new BuyWebViewBE();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -105,16 +110,16 @@ public class SubscriptionPayment extends AppCompatActivity implements View.OnCli
 
         @Override
         protected String doInBackground(String... params) {
-            String result=objSubscriptionPaymentBL.getSubscription(params[0], params[1], params[2],getApplicationContext());
+            String result=objSubscriptionPaymentBL.getSubscription(params[0], params[1], params[2],getApplicationContext(),objBuyWebViewBE);
             return result;
         }
 
         @Override
         protected void onPostExecute(String s) {
             try{
-                Toast.makeText(getApplicationContext(), "Response--->" + s, Toast.LENGTH_SHORT).show();
-                if(s.equalsIgnoreCase(Constant.WS_RESPONSE_SUCCESS)){
-
+               // Toast.makeText(getApplicationContext(), "Response--->" + s, Toast.LENGTH_SHORT).show();
+                if(objBuyWebViewBE.isStatus()){
+                    startActivity(new Intent(getApplicationContext(),BuyWebView.class).putExtra("BuyWebViewBE",objBuyWebViewBE));
                 }
             }catch (NullPointerException e){
 

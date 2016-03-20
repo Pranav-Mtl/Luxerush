@@ -1,5 +1,6 @@
 package com.shoping.BL;
 
+import com.shoping.BE.BuyWebViewBE;
 import com.shoping.BE.CheckOutBE;
 import com.shoping.BE.ItemDetailBE;
 import com.shoping.BE.SubscriptionItemDetailBE;
@@ -121,6 +122,7 @@ public class SubscriptionItemDetailBL {
 
     /*------------*/
     CheckOutBE objCheckOutBE;
+    BuyWebViewBE objBuyWebViewBE;
     public String setSubsDetail(String productID,String userID,CheckOutBE checkOutBE){
         objCheckOutBE=checkOutBE;
         String result=callWSSub(productID,userID);

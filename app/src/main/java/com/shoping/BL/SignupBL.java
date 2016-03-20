@@ -32,7 +32,7 @@ public class SignupBL {
         try
         {
             //name=abcd&email=abcde@gmail.com&pass=abc&mobile=98765432104&gcm_id=abcfghf&device_id=jfhh
-            String URL="name="+objSignupBE.getName()+"&email="+objSignupBE.getEmail()+"&pass="+objSignupBE.getPassword()+"&mobile="+objSignupBE.getMobile()+"&gcm_id="+objSignupBE.getGcm()+ "&device_id="+objSignupBE.getDevice();
+            String URL="name="+objSignupBE.getName()+"&email="+objSignupBE.getEmail()+"&pass="+objSignupBE.getPassword()+"&mobile="+objSignupBE.getMobile()+"&gcm_id="+objSignupBE.getGcm()+ "&device_id="+objSignupBE.getDevice()+"&device_type="+"android";
             text= RestFullWS.serverRequest(URL, Constant.WS_SIGNUP);
 
         }
@@ -85,7 +85,7 @@ public class SignupBL {
         try
         {
             //http://appslure.in/luxerush/webservices/social_signup.php?name=abcd&email=abcde@gmail.com&gcm_id=abcfghf&device_id=jfhh
-            String URL="name="+objSignupBE.getName()+"&email="+objSignupBE.getEmail()+"&gcm_id=" + objSignupBE.getGcm()+ "&device_id="+objSignupBE.getDevice();
+            String URL="name="+objSignupBE.getName()+"&email="+objSignupBE.getEmail()+"&gcm_id=" + objSignupBE.getGcm()+ "&device_id="+objSignupBE.getDevice()+"&device_type="+"android";
             text= RestFullWS.serverRequest(URL, Constant.WS_SIGNUP_social);
 
         }

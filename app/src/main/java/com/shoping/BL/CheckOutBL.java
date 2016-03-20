@@ -23,7 +23,7 @@ public class CheckOutBL {
 
         objCheckOutBE=checkOutBE;
         listStates=new ArrayList();
-        listStates.add("Select State");
+        listStates.add("Select City");
         String result=callWS(userID);
         validate(result);
 
@@ -79,7 +79,6 @@ public class CheckOutBL {
             objCheckOutBE.setEmail(jsonObject.get("email").toString());
             objCheckOutBE.setAddress(jsonObject.get("address").toString());
             objCheckOutBE.setZip(jsonObject.get("pincode").toString());
-            objCheckOutBE.setCity(jsonObject.get("city").toString());
             objCheckOutBE.setMobile(jsonObject.get("phone").toString());
 
         } catch (Exception e) {
